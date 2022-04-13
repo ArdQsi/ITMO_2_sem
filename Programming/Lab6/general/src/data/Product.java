@@ -46,21 +46,16 @@ public class Product implements Collectionable, Serializable {
         this.unitOfMeasure = unitOfMeasure;
         this.owner = owner;
     }
-    /*public Product(String name, Coordinates coordinates, Integer price, float manufactureCost, UnitOfMeasure unitOfMeasure) {
-        creationDate =  LocalDate.now();
-        this.name = name;
-        this.coordinates = coordinates;
-        this.creationDate = creationDate;
-        this.price = price;
-        this.manufactureCost = manufactureCost;
-        this.unitOfMeasure = unitOfMeasure;
-    }*/
+
     public Product(){
     }
 
-    /*public static class SortingComparator implements Comparator<Product> {
-
-    }*/
+    public static class SortingComparator implements Comparator<Product> {
+        public int compare(Product p1, Product p2) {
+            int result = Double.compare(p1.getDataCollection().length, p2.getDataCollection().length);
+            return result;
+        }
+    }
 
     /**
      * Method to output unique owners

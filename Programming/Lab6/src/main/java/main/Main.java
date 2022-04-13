@@ -1,27 +1,32 @@
 package main;
 
+import collection.CollectionManager;
+import data.Product;
 import exceptions.InvalidProgramArgumentException;
 import exceptions.ConnectionException;
 import exceptions.InvalidPortException;
+import file.FileManager;
+import log.Log;
 import server.Server;
-import io.*;
+
+
+import java.io.IOException;
+import java.io.OutputStream;
 
 import static io.OutPutManager.print;
 
 public class Main {
-    //public static Logger logger = LogManager.getLogger("logger");
-    //private static final Logger LOG = LogManager.getRootLogger();
     public static void main(String[] args) throws Exception {
-        args = new String[]{"8085", "ttt"};
+        args = new String[]{"8085"};
         int port = 0;
         String strPort = "";
-        //путь к файлу надо сделать
-        String path = "";
+        FileManager fileManager;
+        CollectionManager<Product> collectionManager;
+
 
         try {
             //System.out.println(System.getenv().get("Lab6"));
-            if (args.length >= 2) {
-                path = args[1];
+            if (args.length >= 1) {
                 strPort = args[0];
             }
             if (args.length == 1) strPort = args[0];
@@ -33,12 +38,19 @@ public class Main {
             }
 
             Server server = new Server(port);
-            //server.run();
+            fileManager = server.getFileManager();
+            collectionManager = server.getCollectionManager();
+            Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+                Log.logger.trace("collection saved");
+                fileManager.writeToCSV(fileManager.getElement(collectionManager.getCollection()));
+            }));
+
             server.start();
             server.consoleMode();
 
+
         } catch (InvalidProgramArgumentException | ConnectionException e) {
-            OutPutManager.print(e.getMessage());
+            print(e.getMessage());
         }
     }
 }

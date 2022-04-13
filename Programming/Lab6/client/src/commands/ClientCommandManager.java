@@ -14,6 +14,7 @@ import static io.OutPutManager.print;
 
 public class ClientCommandManager extends CommandManager {
     private Client client;
+
     public ClientCommandManager(Client c) {
         client = c;
         addCommand(new ExitCommand());
@@ -27,18 +28,21 @@ public class ClientCommandManager extends CommandManager {
     @Override
     public AnswerMsg runCommand(Request msg) {
         AnswerMsg res = new AnswerMsg();
-        if(hasCommand(msg)) {
+        if (hasCommand(msg)) {
             Command cmd = getCommand(msg);
             cmd.setArgument(msg);
             res = (AnswerMsg) cmd.run();
         } else {
-            try{
+            try {
                 client.send(msg);
+                Thread.sleep(60);
                 res = (AnswerMsg) client.receive();
-            } catch(ConnectionTimeoutException e) {
+            } catch (ConnectionTimeoutException e) {
                 res.info("no attempts left, shutting down").setStatus(Status.EXIT);
-            } catch (InvalidDataException| ConnectionException e) {
+            } catch (InvalidDataException | ConnectionException e) {
                 res.error(e.getMessage());
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
         }
         print(res);

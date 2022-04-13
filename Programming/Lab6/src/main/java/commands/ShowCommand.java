@@ -17,7 +17,7 @@ public class ShowCommand extends CommandImplements {
     @Override
     public String execute() {
         if (collectionManager.getCollection().isEmpty()) throw new EmptyCollectionException();
-        //collectionManager.sort(); по хорошему добавить этот метод, но у меня проблемы с сортом(мб по умолчанию сделать)
+        collectionManager.sort();
         return collectionManager.getCollection().toString();
     }
 }

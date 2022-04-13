@@ -4,7 +4,6 @@ import collection.CollectionManager;
 import collection.ProductCollectionManager;
 import commands.ServerCommandManager;
 import log.Log;
-import command.CommandManager;
 import command.CommandType;
 import connection.AnswerMsg;
 import connection.Request;
@@ -13,7 +12,7 @@ import connection.Status;
 import data.Product;
 import exceptions.*;
 import file.FileManager;
-import io.InputManager;
+
 
 import java.io.*;
 import java.net.*;
@@ -30,32 +29,14 @@ public class Server extends Thread {
     private DatagramSocket socket;
     private InetSocketAddress clientAddress;
     InetAddress host;
-    //private DatagramChannel channel;
     private volatile boolean running;
-    private InputManager inputManager;
 
-
-    /*private void host(int p) throws ConnectionException {
-        try {
-            socket = new DatagramSocket(p);
-        } catch (IOException e) {
-            throw new ConnectionException("something went wrong during server initialization");
-        }
-    }*/
-
-    //private void init(int p, String path) throws ConnectionException {
     private void init(int p) throws ConnectionException {
         running = true;
         port = p;
         collectionManager = new ProductCollectionManager();
         fileManager = new FileManager();
         commandManager = new ServerCommandManager(this);
-        /*try {
-            collectionManager
-        } catch (FileException e) {
-            //Log.logger.trace(e.getMessage());
-        }*/
-
         try {
             socket = new DatagramSocket(port);
         } catch (SocketException e) {
@@ -63,7 +44,6 @@ public class Server extends Thread {
         }
         Log.logger.trace("starting server");
     }
-
 
     public Server(int p) throws ConnectionException {
         init(p);
@@ -96,7 +76,6 @@ public class Server extends Thread {
             ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream(4096);
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(byteArrayOutputStream);
             objectOutputStream.writeObject(response);
-            //socket.send(ByteBuffer.wrap(byteArrayOutputStream.toByteArray()), clientAddress);
             DatagramPacket requestPacket = new DatagramPacket(byteArrayOutputStream.toByteArray(), byteArrayOutputStream.size(), clientAddress);
             socket.send(requestPacket);
             byteArrayOutputStream.close();
@@ -142,10 +121,6 @@ public class Server extends Thread {
         socket.close();
     }
 
-    public CommandManager getCommandManager() {
-        return commandManager;
-    }
-
     public FileManager getFileManager() {
         return fileManager;
     }
@@ -153,9 +128,4 @@ public class Server extends Thread {
     public CollectionManager<Product> getCollectionManager() {
         return collectionManager;
     }
-
-    public InputManager getInputManager() {
-        return inputManager;
-    }
-
 }

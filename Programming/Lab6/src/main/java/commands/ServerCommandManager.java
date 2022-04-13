@@ -21,7 +21,6 @@ public class ServerCommandManager extends CommandManager {
         server = serv;
         collectionManager = server.getCollectionManager();
         fileManager = server.getFileManager();
-
         addCommand(new AddCommand(collectionManager));
         addCommand(new InfoCommand(collectionManager));
         addCommand(new HelpCommand());
@@ -36,7 +35,6 @@ public class ServerCommandManager extends CommandManager {
         addCommand(new PrintUniqueOwnerCommand(collectionManager));
         addCommand(new ExecuteScriptCommand(this));
         addCommand(new RemoveLowerCommand(collectionManager));
-
     }
 
     public Server getServer() {

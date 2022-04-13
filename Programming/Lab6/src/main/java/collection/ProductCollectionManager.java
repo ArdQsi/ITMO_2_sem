@@ -40,9 +40,8 @@ public class ProductCollectionManager implements CollectionManager<Product> {
             }
         }
 
-    //нужно сделать метод
     public void sort() {
-
+        Collections.sort(collection, new Product.SortingComparator());
     }
 
     public LinkedList<Product> getCollection() {

@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface CollectionManager<T>{
     public long generateNextId();
-    //public void sort();
+    public void sort();
     public void add(T element);
     public String getInfo();
     public LinkedList<T> getCollection();
