@@ -3,10 +3,15 @@ import exceptions.InvalidProgramArgumentException;
 import exceptions.ConnectionException;
 import exceptions.InvalidPortException;
 
+
+
 import static io.OutPutManager.print;
 
 public class Main {
+
+
     public static void main(String[] args) throws Exception {
+
         args = new String[]{"localhost", "8085"};
         String addr = "";
         int port = 0;

@@ -1,0 +1,84 @@
+[02:55:04.547 TRACE] starting server
+[02:55:36.258 TRACE] received request from /127.0.0.1
+[02:55:36.274 ERROR] Added element: {
+id : "1",
+name : "ard",
+coordinates : {x : "1",} {y : "1"},
+creationDate : "2022-04-13",
+price : "1",
+manufactureCost : "1.0",
+unitOfMeasure : "KILOGRAMS",
+owner : {personName : "ard",birthday : "1111-11-11T00:00",weight : "321231.0",passportID : "21332113212"}
+}
+[02:55:36.276 TRACE] sent response to /127.0.0.1:64960
+[02:55:38.396 TRACE] received request from /127.0.0.1
+[02:55:38.396 ERROR] [{
+id : "1",
+name : "ard",
+coordinates : {x : "1",} {y : "1"},
+creationDate : "2022-04-13",
+price : "1",
+manufactureCost : "1.0",
+unitOfMeasure : "KILOGRAMS",
+owner : {personName : "ard",birthday : "1111-11-11T00:00",weight : "321231.0",passportID : "21332113212"}
+}]
+[02:55:38.397 TRACE] sent response to /127.0.0.1:64960
+[02:55:39.561 TRACE] received request from /127.0.0.1
+[02:55:39.570 ERROR] LinkedList of Product, size: 1, initialization date: 13/04/2022 02:55:04.123
+[02:55:39.570 TRACE] sent response to /127.0.0.1:64960
+[02:55:43.379 TRACE] received request from /127.0.0.1
+[02:55:43.379 ERROR] help : вывести справку по доступным командам
+info : вывести в стандартный поток вывода информацию о коллекции (тип, дата инициализации, количество элементов и т.д.)
+show : вывести в стандартный поток вывода все элементы коллекции в строковом представлении
+add {element} : добавить новый элемент в коллекцию
+update id {element} : обновить значение элемента коллекции, id которого равен заданному
+remove_by_id id : удалить элемент из коллекции по его id
+clear : очистить коллекцию
+save : сохранить коллекцию в файл
+execute_script file_name : считать и исполнить скрипт из указанного файла. В скрипте содержатся команды в таком же виде, в котором их вводит пользователь в интерактивном режиме.
+exit : завершить программу (без сохранения в файл)
+add_if_min {element} : добавить новый элемент в коллекцию, если его значение меньше, чем у наименьшего элемента этой коллекции
+remove_greater {element} : удалить из коллекции все элементы, превышающие заданный
+remove_lower {element} : удалить из коллекции все элементы, меньшие, чем заданный
+filter_less_than_manufacture_cost manufactureCost : вывести элементы, значение поля manufactureCost которых меньше заданного
+print_unique_owner : вывести уникальные значения поля owner всех элементов в коллекции
+
+[02:55:43.380 TRACE] sent response to /127.0.0.1:64960
+[02:55:51.936 TRACE] received request from /127.0.0.1
+[02:55:51.951 ERROR] ard, 1111-11-11T00:00, 321231.0, 21332113212
+
+[02:55:51.951 TRACE] sent response to /127.0.0.1:64960
+[02:56:17.658 TRACE] received request from /127.0.0.1
+[02:56:17.660 ERROR] Added element: {
+id : "2",
+name : "r",
+coordinates : {x : "1",} {y : "1"},
+creationDate : "2022-04-13",
+price : "1",
+manufactureCost : "1.0",
+unitOfMeasure : "KILOGRAMS",
+owner : {personName : "ard",birthday : "2131-11-11T00:00",weight : "213213.0",passportID : "312312312321"}
+}
+[02:56:17.660 TRACE] sent response to /127.0.0.1:64960
+[02:56:26.593 TRACE] received request from /127.0.0.1
+[02:56:26.593 ERROR] wrong command
+[02:56:26.594 TRACE] sent response to /127.0.0.1:64960
+[02:56:30.150 TRACE] received request from /127.0.0.1
+[02:56:30.150 ERROR] help : вывести справку по доступным командам
+info : вывести в стандартный поток вывода информацию о коллекции (тип, дата инициализации, количество элементов и т.д.)
+show : вывести в стандартный поток вывода все элементы коллекции в строковом представлении
+add {element} : добавить новый элемент в коллекцию
+update id {element} : обновить значение элемента коллекции, id которого равен заданному
+remove_by_id id : удалить элемент из коллекции по его id
+clear : очистить коллекцию
+save : сохранить коллекцию в файл
+execute_script file_name : считать и исполнить скрипт из указанного файла. В скрипте содержатся команды в таком же виде, в котором их вводит пользователь в интерактивном режиме.
+exit : завершить программу (без сохранения в файл)
+add_if_min {element} : добавить новый элемент в коллекцию, если его значение меньше, чем у наименьшего элемента этой коллекции
+remove_greater {element} : удалить из коллекции все элементы, превышающие заданный
+remove_lower {element} : удалить из коллекции все элементы, меньшие, чем заданный
+filter_less_than_manufacture_cost manufactureCost : вывести элементы, значение поля manufactureCost которых меньше заданного
+print_unique_owner : вывести уникальные значения поля owner всех элементов в коллекции
+
+[02:56:30.151 TRACE] sent response to /127.0.0.1:64960
+[02:56:43.669 ERROR] collection successfully saved

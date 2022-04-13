@@ -46,7 +46,7 @@ public class Product implements Collectionable, Serializable {
         this.unitOfMeasure = unitOfMeasure;
         this.owner = owner;
     }
-    public Product(String name, Coordinates coordinates, Integer price, float manufactureCost, UnitOfMeasure unitOfMeasure) {
+    /*public Product(String name, Coordinates coordinates, Integer price, float manufactureCost, UnitOfMeasure unitOfMeasure) {
         creationDate =  LocalDate.now();
         this.name = name;
         this.coordinates = coordinates;
@@ -54,7 +54,7 @@ public class Product implements Collectionable, Serializable {
         this.price = price;
         this.manufactureCost = manufactureCost;
         this.unitOfMeasure = unitOfMeasure;
-    }
+    }*/
     public Product(){
     }
 

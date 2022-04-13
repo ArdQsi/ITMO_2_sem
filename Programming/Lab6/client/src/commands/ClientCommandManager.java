@@ -17,6 +17,7 @@ public class ClientCommandManager extends CommandManager {
     public ClientCommandManager(Client c) {
         client = c;
         addCommand(new ExitCommand());
+        addCommand(new ExecuteScriptCommand(this));
     }
 
     public Client getClient() {

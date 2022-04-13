@@ -7,6 +7,7 @@ import data.Product;
 import data.UnitOfMeasure;
 import exceptions.EmptyPathException;
 import exceptions.FileException;
+import exceptions.FileNotExistsException;
 import exceptions.FileWrongPermissionException;
 import java.io.*;
 import java.nio.file.NoSuchFileException;
@@ -41,12 +42,32 @@ public class FileManager{ //implements ReaderWriter {
      * Read commands from a file
      * @return string of commands
      */
-    public String read()throws FileException{
+    /*public String read() throws FileException {
+        String str = "";
+        try {
+            if (path1 == null) throw new EmptyPathException();
+            InputStreamReader reader = null;
+            InputStream inputStream;
+            File file = new File(path1);
+            if(!file.canRead()) throw new FileWrongPermissionException("cannot read file");
+            inputStream = new FileInputStream(file);
+            reader = new InputStreamReader(inputStream);
+            int currectSymbol;
+            while ((currectSymbol = reader.read()) != -1) {
+                str += ((char)currectSymbol);
+            }
+            reader.close();
+        } catch (IOException e){
+            throw  new FileException("cannot read file");
+        }
+        return str;
+    }*/
+    public String read() throws FileException{
         String str = "";
         try{
             if (path1 == null) throw new EmptyPathException();
             File file = new File(path1);
-            if(!file.exists()) throw new FileNotFoundException();
+            if(!file.exists()) throw new FileNotExistsException();
             if(!file.canRead()) throw new FileWrongPermissionException("cannot read file");
             FileReader fileReader = new FileReader(file);
             BufferedReader bufferedReader = new BufferedReader(fileReader);
@@ -55,16 +76,9 @@ public class FileManager{ //implements ReaderWriter {
                 str+=line+"\n";
                 line = bufferedReader.readLine();
             }
-        }
-        catch (FileWrongPermissionException e) {
-            printErr(e.getMessage());
-        }  catch (FileNotFoundException e) {
-            printErr("Загрузочный файл не найден!");
-        } catch (NoSuchFileException e) {
-            printErr("Загрузочный файл пуст!");
-        } catch (IllegalStateException e) {
-            printErr("Непредвиденная ошибка!");
-        } catch (IOException e) {}
+        } catch (IOException e){
+        throw new FileException("cannot read file");
+    }
         return str;
     }
 
@@ -101,7 +115,7 @@ public class FileManager{ //implements ReaderWriter {
      * Read file and add product to collection
      * @return collection of elements
      */
-    public LinkedList<Product> readCSVS(){
+    public LinkedList<Product> readCSVS() throws FileException{
         LinkedList<Product> collection = new LinkedList<>();
         if (path != null) {
             try {

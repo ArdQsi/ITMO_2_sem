@@ -56,6 +56,7 @@ public abstract class CommandManager implements Commandable, Closeable {
         return map.containsKey(s);
     }
 
+
     public void consoleMode() {
         inputManager = new ConsoleInputManager();
         isRunning = true;
@@ -70,7 +71,7 @@ public abstract class CommandManager implements Commandable, Closeable {
     }
 
     public void fileMode(String path1) throws FileException {
-        //currentScriptFileName = path;
+        //currentScriptFileName = path1;
         inputManager = new FileInputManager(path1);
         isRunning = true;
         while(isRunning && inputManager.getScanner().hasNextLine()) {

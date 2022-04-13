@@ -1,6 +1,8 @@
 package io;
 
+import connection.CommandMsg;
 import data.*;
+import exceptions.InvalidDataException;
 
 import java.time.LocalDateTime;
 import java.util.Scanner;
@@ -75,7 +77,6 @@ public class ConsoleInputManager extends InputManagerImplements{
     @Override
     public String readPassportId() {
         return new Question<String>("Введите паспорт: ", super::readPassportId).getAnswer();
-
     }
 
     @Override
@@ -98,4 +99,5 @@ public class ConsoleInputManager extends InputManagerImplements{
         Person owner = readOwner();
         return new Product(name,coords,price,manufactureCost,unitOfMeasure,owner);
     }
+
 }

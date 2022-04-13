@@ -19,7 +19,6 @@ import static utils.DateConvertor.parseLocalDate;
  */
 public abstract class InputManagerImplements implements InputManager{
     private Scanner scanner;
-
     public InputManagerImplements(Scanner sc) {
         this.scanner = sc;
         this.scanner.useDelimiter("\n");
@@ -28,7 +27,6 @@ public abstract class InputManagerImplements implements InputManager{
     public Scanner getScanner() {
         return scanner;
     }
-
 
     public String readName() throws EmptyStringException,StringException {
         String s = scanner.nextLine().trim();
@@ -96,8 +94,7 @@ public abstract class InputManagerImplements implements InputManager{
         String buf = scanner.nextLine().trim();
         String s = "";
         if (buf.equals("")) {
-            //return parseLocalDate(s);
-            return null;
+            return parseLocalDate(s);
         }
         else {
             return parseLocalDate(buf);
@@ -143,7 +140,6 @@ public abstract class InputManagerImplements implements InputManager{
     }
 
     public Person readOwner() throws InvalidDataException {
-        //System.out.println("Хотите ввести покупателя?");
         String namePerson = readNamePerson();
         LocalDateTime birthday = readBirthday();
         float weight = readWeight();
@@ -151,33 +147,17 @@ public abstract class InputManagerImplements implements InputManager{
         return new Person(namePerson, birthday, weight, passportID);
     }
 
-    public String ReadOwner() throws InvalidDataException {
-        String s = getScanner().nextLine().trim();
-            if ((!s.equals("Да"))||(!s.equals("Нет"))) throw new InvalidDataException("kek");
-            if (s.equals("Да")){
-                return "Да";
-            }
-            else if (s.equals("Нет")) {
-                return "Нет";
-            }  //else throw new InvalidDataException("kek");
-        return s;
-    }
-
-
-
     public Product readProduct() throws InvalidDataException{
         Product product = null;
-
         String name = readName();
         Coordinates coords = readCoordinates();
         Integer price = readPrice();
         float manufactureCost = readManufactureCost();
         UnitOfMeasure unitOfMeasure = readUnitOfMeasure();
         Person owner = readOwner();
-        //product = new Product(name,coords,price,manufactureCost,unitOfMeasure,owner);
-        //product = new Product(name,coords,price,manufactureCost,unitOfMeasure);
+        product = new Product(name,coords,price,manufactureCost,unitOfMeasure,owner);
 
-        return new Product();
+        return product;
     }
 
     public CommandMsg readCommand() {
@@ -190,11 +170,8 @@ public abstract class InputManagerImplements implements InputManager{
             arg = arr[1];
         }
         if (cmd.equals("add")||cmd.equals("add_if_min") ||cmd.equals("add_if_max")||cmd.equals("update")) {
-            try {
-                product = readProduct();
-            }catch (InvalidDataException e) {
-
-            }
+                ConsoleInputManager consoleInputManager = new ConsoleInputManager();
+                product = consoleInputManager.readProduct();
         }
         return new CommandMsg(cmd,arg,product);
     }
