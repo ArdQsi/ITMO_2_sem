@@ -17,9 +17,10 @@ public class ClientCommandManager extends CommandManager {
 
     public ClientCommandManager(Client c) {
         client = c;
-        addCommand(new ExitCommand());
         addCommand(new ExecuteScriptCommand(this));
+        addCommand(new ExitCommand());
     }
+
 
     public Client getClient() {
         return client;
@@ -35,7 +36,7 @@ public class ClientCommandManager extends CommandManager {
         } else {
             try {
                 client.send(msg);
-                Thread.sleep(60);
+                Thread.sleep(200);
                 res = (AnswerMsg) client.receive();
             } catch (ConnectionTimeoutException e) {
                 res.info("no attempts left, shutting down").setStatus(Status.EXIT);

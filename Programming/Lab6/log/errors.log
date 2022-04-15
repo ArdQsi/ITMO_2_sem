@@ -2712,3 +2712,313 @@ manufactureCost : "1.0",
 unitOfMeasure : "KILOGRAMS",
 owner : {personName : "R",birthday : "1111-11-11T00:00",weight : "24.0",passportID : "2442423243423"}
 }]
+[23:33:39.951 ERROR] [{
+id : "1",
+name : "ard",
+coordinates : {x : "1",} {y : "1"},
+creationDate : "2022-04-13",
+price : "1",
+manufactureCost : "1.0",
+unitOfMeasure : "KILOGRAMS",
+owner : {personName : "ard",birthday : "1111-11-11T00:00",weight : "321231.0",passportID : "21332113212"}
+}, {
+id : "2",
+name : "r",
+coordinates : {x : "1",} {y : "1"},
+creationDate : "2022-04-13",
+price : "1",
+manufactureCost : "1.0",
+unitOfMeasure : "KILOGRAMS",
+owner : {personName : "ard",birthday : "2131-11-11T00:00",weight : "213213.0",passportID : "312312312321"}
+}, {
+id : "3",
+name : "r",
+coordinates : {x : "1",} {y : "1"},
+creationDate : "2022-04-13",
+price : "1",
+manufactureCost : "1.0",
+unitOfMeasure : "KILOGRAMS",
+owner : {personName : "r",birthday : "1111-11-11T00:00",weight : "231.0",passportID : "123123123123"}
+}, {
+id : "4",
+name : "pr",
+coordinates : {x : "1",} {y : "123"},
+creationDate : "2022-04-13",
+price : "1",
+manufactureCost : "1.0",
+unitOfMeasure : "KILOGRAMS",
+owner : {personName : "r",birthday : "1111-11-11T00:00",weight : "2131.0",passportID : "132132123312"}
+}, {
+id : "5",
+name : "e",
+coordinates : {x : "1",} {y : "1"},
+creationDate : "2022-04-14",
+price : "1",
+manufactureCost : "1.0",
+unitOfMeasure : "KILOGRAMS",
+owner : {personName : "r",birthday : "1111-11-11T00:00",weight : "123.0",passportID : "123213132"}
+}, {
+id : "6",
+name : "rom",
+coordinates : {x : "1",} {y : "1"},
+creationDate : "2022-04-14",
+price : "1",
+manufactureCost : "1.0",
+unitOfMeasure : "KILOGRAMS",
+owner : {personName : "R",birthday : "1111-11-11T00:00",weight : "24.0",passportID : "2442423243423"}
+}]
+[23:34:17.796 ERROR] [{
+id : "1",
+name : "ard",
+coordinates : {x : "1",} {y : "1"},
+creationDate : "2022-04-13",
+price : "1",
+manufactureCost : "1.0",
+unitOfMeasure : "KILOGRAMS",
+owner : {personName : "ard",birthday : "1111-11-11T00:00",weight : "321231.0",passportID : "21332113212"}
+}, {
+id : "2",
+name : "r",
+coordinates : {x : "1",} {y : "1"},
+creationDate : "2022-04-13",
+price : "1",
+manufactureCost : "1.0",
+unitOfMeasure : "KILOGRAMS",
+owner : {personName : "ard",birthday : "2131-11-11T00:00",weight : "213213.0",passportID : "312312312321"}
+}, {
+id : "3",
+name : "r",
+coordinates : {x : "1",} {y : "1"},
+creationDate : "2022-04-13",
+price : "1",
+manufactureCost : "1.0",
+unitOfMeasure : "KILOGRAMS",
+owner : {personName : "r",birthday : "1111-11-11T00:00",weight : "231.0",passportID : "123123123123"}
+}, {
+id : "4",
+name : "pr",
+coordinates : {x : "1",} {y : "123"},
+creationDate : "2022-04-13",
+price : "1",
+manufactureCost : "1.0",
+unitOfMeasure : "KILOGRAMS",
+owner : {personName : "r",birthday : "1111-11-11T00:00",weight : "2131.0",passportID : "132132123312"}
+}, {
+id : "5",
+name : "e",
+coordinates : {x : "1",} {y : "1"},
+creationDate : "2022-04-14",
+price : "1",
+manufactureCost : "1.0",
+unitOfMeasure : "KILOGRAMS",
+owner : {personName : "r",birthday : "1111-11-11T00:00",weight : "123.0",passportID : "123213132"}
+}, {
+id : "6",
+name : "rom",
+coordinates : {x : "1",} {y : "1"},
+creationDate : "2022-04-14",
+price : "1",
+manufactureCost : "1.0",
+unitOfMeasure : "KILOGRAMS",
+owner : {personName : "R",birthday : "1111-11-11T00:00",weight : "24.0",passportID : "2442423243423"}
+}]
+[23:34:19.699 ERROR] [{
+id : "1",
+name : "ard",
+coordinates : {x : "1",} {y : "1"},
+creationDate : "2022-04-13",
+price : "1",
+manufactureCost : "1.0",
+unitOfMeasure : "KILOGRAMS",
+owner : {personName : "ard",birthday : "1111-11-11T00:00",weight : "321231.0",passportID : "21332113212"}
+}, {
+id : "2",
+name : "r",
+coordinates : {x : "1",} {y : "1"},
+creationDate : "2022-04-13",
+price : "1",
+manufactureCost : "1.0",
+unitOfMeasure : "KILOGRAMS",
+owner : {personName : "ard",birthday : "2131-11-11T00:00",weight : "213213.0",passportID : "312312312321"}
+}, {
+id : "3",
+name : "r",
+coordinates : {x : "1",} {y : "1"},
+creationDate : "2022-04-13",
+price : "1",
+manufactureCost : "1.0",
+unitOfMeasure : "KILOGRAMS",
+owner : {personName : "r",birthday : "1111-11-11T00:00",weight : "231.0",passportID : "123123123123"}
+}, {
+id : "4",
+name : "pr",
+coordinates : {x : "1",} {y : "123"},
+creationDate : "2022-04-13",
+price : "1",
+manufactureCost : "1.0",
+unitOfMeasure : "KILOGRAMS",
+owner : {personName : "r",birthday : "1111-11-11T00:00",weight : "2131.0",passportID : "132132123312"}
+}, {
+id : "5",
+name : "e",
+coordinates : {x : "1",} {y : "1"},
+creationDate : "2022-04-14",
+price : "1",
+manufactureCost : "1.0",
+unitOfMeasure : "KILOGRAMS",
+owner : {personName : "r",birthday : "1111-11-11T00:00",weight : "123.0",passportID : "123213132"}
+}, {
+id : "6",
+name : "rom",
+coordinates : {x : "1",} {y : "1"},
+creationDate : "2022-04-14",
+price : "1",
+manufactureCost : "1.0",
+unitOfMeasure : "KILOGRAMS",
+owner : {personName : "R",birthday : "1111-11-11T00:00",weight : "24.0",passportID : "2442423243423"}
+}]
+[01:26:41.411 ERROR] [{
+id : "1",
+name : "ard",
+coordinates : {x : "1",} {y : "1"},
+creationDate : "2022-04-13",
+price : "1",
+manufactureCost : "1.0",
+unitOfMeasure : "KILOGRAMS",
+owner : {personName : "ard",birthday : "1111-11-11T00:00",weight : "321231.0",passportID : "21332113212"}
+}, {
+id : "2",
+name : "r",
+coordinates : {x : "1",} {y : "1"},
+creationDate : "2022-04-13",
+price : "1",
+manufactureCost : "1.0",
+unitOfMeasure : "KILOGRAMS",
+owner : {personName : "ard",birthday : "2131-11-11T00:00",weight : "213213.0",passportID : "312312312321"}
+}, {
+id : "3",
+name : "r",
+coordinates : {x : "1",} {y : "1"},
+creationDate : "2022-04-13",
+price : "1",
+manufactureCost : "1.0",
+unitOfMeasure : "KILOGRAMS",
+owner : {personName : "r",birthday : "1111-11-11T00:00",weight : "231.0",passportID : "123123123123"}
+}, {
+id : "4",
+name : "pr",
+coordinates : {x : "1",} {y : "123"},
+creationDate : "2022-04-13",
+price : "1",
+manufactureCost : "1.0",
+unitOfMeasure : "KILOGRAMS",
+owner : {personName : "r",birthday : "1111-11-11T00:00",weight : "2131.0",passportID : "132132123312"}
+}, {
+id : "5",
+name : "e",
+coordinates : {x : "1",} {y : "1"},
+creationDate : "2022-04-14",
+price : "1",
+manufactureCost : "1.0",
+unitOfMeasure : "KILOGRAMS",
+owner : {personName : "r",birthday : "1111-11-11T00:00",weight : "123.0",passportID : "123213132"}
+}, {
+id : "6",
+name : "rom",
+coordinates : {x : "1",} {y : "1"},
+creationDate : "2022-04-14",
+price : "1",
+manufactureCost : "1.0",
+unitOfMeasure : "KILOGRAMS",
+owner : {personName : "R",birthday : "1111-11-11T00:00",weight : "24.0",passportID : "2442423243423"}
+}]
+[01:26:41.411 ERROR] recursive script execute attempt
+[01:26:41.411 ERROR] script successfully executed
+[01:34:15.291 ERROR] help : вывести справку по доступным командам
+info : вывести в стандартный поток вывода информацию о коллекции (тип, дата инициализации, количество элементов и т.д.)
+show : вывести в стандартный поток вывода все элементы коллекции в строковом представлении
+add {element} : добавить новый элемент в коллекцию
+update id {element} : обновить значение элемента коллекции, id которого равен заданному
+remove_by_id id : удалить элемент из коллекции по его id
+clear : очистить коллекцию
+save : сохранить коллекцию в файл
+execute_script file_name : считать и исполнить скрипт из указанного файла. В скрипте содержатся команды в таком же виде, в котором их вводит пользователь в интерактивном режиме.
+exit : завершить программу (без сохранения в файл)
+add_if_min {element} : добавить новый элемент в коллекцию, если его значение меньше, чем у наименьшего элемента этой коллекции
+remove_greater {element} : удалить из коллекции все элементы, превышающие заданный
+remove_lower {element} : удалить из коллекции все элементы, меньшие, чем заданный
+filter_less_than_manufacture_cost manufactureCost : вывести элементы, значение поля manufactureCost которых меньше заданного
+print_unique_owner : вывести уникальные значения поля owner всех элементов в коллекции
+
+[01:38:56.824 ERROR] [{
+id : "1",
+name : "ard",
+coordinates : {x : "1",} {y : "1"},
+creationDate : "2022-04-13",
+price : "1",
+manufactureCost : "1.0",
+unitOfMeasure : "KILOGRAMS",
+owner : {personName : "ard",birthday : "1111-11-11T00:00",weight : "321231.0",passportID : "21332113212"}
+}, {
+id : "2",
+name : "r",
+coordinates : {x : "1",} {y : "1"},
+creationDate : "2022-04-13",
+price : "1",
+manufactureCost : "1.0",
+unitOfMeasure : "KILOGRAMS",
+owner : {personName : "ard",birthday : "2131-11-11T00:00",weight : "213213.0",passportID : "312312312321"}
+}, {
+id : "3",
+name : "r",
+coordinates : {x : "1",} {y : "1"},
+creationDate : "2022-04-13",
+price : "1",
+manufactureCost : "1.0",
+unitOfMeasure : "KILOGRAMS",
+owner : {personName : "r",birthday : "1111-11-11T00:00",weight : "231.0",passportID : "123123123123"}
+}, {
+id : "4",
+name : "pr",
+coordinates : {x : "1",} {y : "123"},
+creationDate : "2022-04-13",
+price : "1",
+manufactureCost : "1.0",
+unitOfMeasure : "KILOGRAMS",
+owner : {personName : "r",birthday : "1111-11-11T00:00",weight : "2131.0",passportID : "132132123312"}
+}, {
+id : "5",
+name : "e",
+coordinates : {x : "1",} {y : "1"},
+creationDate : "2022-04-14",
+price : "1",
+manufactureCost : "1.0",
+unitOfMeasure : "KILOGRAMS",
+owner : {personName : "r",birthday : "1111-11-11T00:00",weight : "123.0",passportID : "123213132"}
+}, {
+id : "6",
+name : "rom",
+coordinates : {x : "1",} {y : "1"},
+creationDate : "2022-04-14",
+price : "1",
+manufactureCost : "1.0",
+unitOfMeasure : "KILOGRAMS",
+owner : {personName : "R",birthday : "1111-11-11T00:00",weight : "24.0",passportID : "2442423243423"}
+}]
+[02:30:18.968 ERROR] help : вывести справку по доступным командам
+info : вывести в стандартный поток вывода информацию о коллекции (тип, дата инициализации, количество элементов и т.д.)
+show : вывести в стандартный поток вывода все элементы коллекции в строковом представлении
+add {element} : добавить новый элемент в коллекцию
+update id {element} : обновить значение элемента коллекции, id которого равен заданному
+remove_by_id id : удалить элемент из коллекции по его id
+clear : очистить коллекцию
+save : сохранить коллекцию в файл
+execute_script file_name : считать и исполнить скрипт из указанного файла. В скрипте содержатся команды в таком же виде, в котором их вводит пользователь в интерактивном режиме.
+exit : завершить программу (без сохранения в файл)
+add_if_min {element} : добавить новый элемент в коллекцию, если его значение меньше, чем у наименьшего элемента этой коллекции
+remove_greater {element} : удалить из коллекции все элементы, превышающие заданный
+remove_lower {element} : удалить из коллекции все элементы, меньшие, чем заданный
+filter_less_than_manufacture_cost manufactureCost : вывести элементы, значение поля manufactureCost которых меньше заданного
+print_unique_owner : вывести уникальные значения поля owner всех элементов в коллекции
+
+[02:30:21.792 ERROR] LinkedList of Product, size: 6, initialization date: 16/04/2022 02:30:10.591

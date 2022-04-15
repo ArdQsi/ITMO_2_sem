@@ -9,15 +9,13 @@ import file.FileManager;
 import log.Log;
 import server.Server;
 
-
-import java.io.IOException;
-import java.io.OutputStream;
+import java.util.Scanner;
 
 import static io.OutPutManager.print;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        args = new String[]{"8085"};
+
         int port = 0;
         String strPort = "";
         FileManager fileManager;
@@ -25,12 +23,12 @@ public class Main {
 
 
         try {
-            //System.out.println(System.getenv().get("Lab6"));
-            if (args.length >= 1) {
-                strPort = args[0];
-            }
-            if (args.length == 1) strPort = args[0];
-            if (args.length == 0) throw new InvalidProgramArgumentException("no address passed by argument");
+
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Введите порт");
+            String s = scanner.nextLine();
+            strPort = s;
+
             try {
                 port = Integer.parseInt(strPort);
             } catch (NumberFormatException e) {
@@ -49,7 +47,7 @@ public class Main {
             server.consoleMode();
 
 
-        } catch (InvalidProgramArgumentException | ConnectionException e) {
+        } catch (ConnectionException e) {
             print(e.getMessage());
         }
     }

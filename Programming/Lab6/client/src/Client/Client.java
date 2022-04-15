@@ -19,14 +19,17 @@ public class Client extends Thread implements Closeable {
     private SocketAddress address;
     private DatagramChannel channel;
     private ClientCommandManager commandManager;
+    boolean running;
+
 
     public Client(String addr, int p) throws ConnectionException {
         init(addr, p);
     }
 
     private void init(String addr, int p) throws ConnectionException {
-        connect(addr, p);
         commandManager = new ClientCommandManager(this);
+        running = true;
+        connect(addr, p);
     }
 
     public void connect(String addr, int p) throws ConnectionException {
@@ -88,6 +91,7 @@ public class Client extends Thread implements Closeable {
     }
 
     public void close() throws IOException {
+        running = false;
         commandManager.close();
         channel.close();
     }

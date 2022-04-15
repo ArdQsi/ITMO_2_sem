@@ -8,11 +8,12 @@ import exceptions.MissedCommandArgumentException;
 import exceptions.RecursiveScriptException;
 
 public class ExecuteScriptCommand extends CommandImplements {
-    ClientCommandManager commandManager;
+    private ClientCommandManager commandManager;
     public ExecuteScriptCommand(ClientCommandManager cm) {
         super("execute_script", CommandType.NORMAL);
         commandManager = cm;
     }
+
     @Override
     public String execute() {
         if(!hasStringArg()) throw new MissedCommandArgumentException();

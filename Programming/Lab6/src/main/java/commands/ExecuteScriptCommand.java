@@ -2,6 +2,7 @@ package commands;
 
 import command.CommandImplements;
 import command.CommandType;
+import connection.Request;
 import exceptions.FileException;
 import exceptions.MissedCommandArgumentException;
 import exceptions.RecursiveScriptException;

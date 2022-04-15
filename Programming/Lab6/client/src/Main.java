@@ -4,6 +4,7 @@ import exceptions.ConnectionException;
 import exceptions.InvalidPortException;
 
 
+import java.util.Scanner;
 
 import static io.OutPutManager.print;
 
@@ -11,21 +12,22 @@ public class Main {
 
 
     public static void main(String[] args) throws Exception {
-
-        args = new String[]{"localhost", "8085"};
+        Scanner scanner = new Scanner(System.in);
+        args = new String[]{"localhost"};
         String addr = "";
         int port = 0;
         try {
-            if (args.length != 2) throw new InvalidProgramArgumentException("no address passed by argument");
             addr = args[0];
             try {
-                port = Integer.parseInt(args[1]);
-            } catch (NumberFormatException e){
+                System.out.println("Введите порт");
+                String s = scanner.nextLine();
+                port = Integer.parseInt(s);
+            } catch (NumberFormatException e) {
                 throw new InvalidPortException();
             }
-            Client client = new Client(addr,port);
+            Client client = new Client(addr, port);
             client.start();
-        } catch (InvalidProgramArgumentException | ConnectionException e) {
+        } catch (ConnectionException e) {
             print(e.getMessage());
         }
     }
