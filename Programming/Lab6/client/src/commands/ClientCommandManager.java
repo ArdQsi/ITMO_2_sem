@@ -5,6 +5,7 @@ import command.Command;
 import command.CommandManager;
 import connection.AnswerMsg;
 import connection.Request;
+import connection.Request1;
 import connection.Status;
 import exceptions.ConnectionException;
 import exceptions.ConnectionTimeoutException;
@@ -36,7 +37,7 @@ public class ClientCommandManager extends CommandManager {
         } else {
             try {
                 client.send(msg);
-                Thread.sleep(200);
+                Thread.sleep(300);
                 res = (AnswerMsg) client.receive();
             } catch (ConnectionTimeoutException e) {
                 res.info("no attempts left, shutting down").setStatus(Status.EXIT);

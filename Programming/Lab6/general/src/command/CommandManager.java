@@ -1,6 +1,7 @@
 package command;
 
 import connection.CommandMsg;
+import connection.Request1;
 import connection.Response;
 import connection.Status;
 import exceptions.FileException;
@@ -8,6 +9,7 @@ import exceptions.NoSuchCommandException;
 import io.ConsoleInputManager;
 import io.FileInputManager;
 import io.InputManager;
+
 
 
 import java.io.Closeable;
@@ -42,6 +44,7 @@ public abstract class CommandManager implements Commandable, Closeable {
         map.put(c.getName(),c);
     }
 
+
     public void addCommand(String key, Command c) {
         map.put(key,c);
     }
@@ -71,7 +74,6 @@ public abstract class CommandManager implements Commandable, Closeable {
     }
 
     public void fileMode(String path1) throws FileException {
-        //currentScriptFileName = path1;
         inputManager = new FileInputManager(path1);
         isRunning = true;
         while(isRunning && inputManager.getScanner().hasNextLine()) {

@@ -1,10 +1,7 @@
 package command;
 
 
-import connection.AnswerMsg;
-import connection.Request;
-import connection.Response;
-import connection.Status;
+import connection.*;
 import data.Product;
 import exceptions.CommandException;
 import exceptions.ExitException;

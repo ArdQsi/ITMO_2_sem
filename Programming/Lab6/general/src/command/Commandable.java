@@ -1,6 +1,7 @@
 package command;
 
 import connection.Request;
+import connection.Request1;
 import connection.Response;
 import exceptions.FileException;
 

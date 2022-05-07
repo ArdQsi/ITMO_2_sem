@@ -1,9 +1,11 @@
-import Client.Client;
+import Client.*;
+import command.CommandManager;
 import exceptions.InvalidProgramArgumentException;
 import exceptions.ConnectionException;
 import exceptions.InvalidPortException;
 
 
+import java.io.IOException;
 import java.util.Scanner;
 
 import static io.OutPutManager.print;
@@ -26,9 +28,10 @@ public class Main {
                 throw new InvalidPortException();
             }
             Client client = new Client(addr, port);
-            client.start();
+            client.starts();
         } catch (ConnectionException e) {
             print(e.getMessage());
         }
+
     }
 }

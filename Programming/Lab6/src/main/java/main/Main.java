@@ -2,7 +2,6 @@ package main;
 
 import collection.CollectionManager;
 import data.Product;
-import exceptions.InvalidProgramArgumentException;
 import exceptions.ConnectionException;
 import exceptions.InvalidPortException;
 import file.FileManager;
@@ -43,8 +42,7 @@ public class Main {
                 fileManager.writeToCSV(fileManager.getElement(collectionManager.getCollection()));
             }));
 
-            server.start();
-            server.consoleMode();
+            server.runs();
 
 
         } catch (ConnectionException e) {

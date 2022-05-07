@@ -1,9 +1,10 @@
 package commands;
 
 import connection.Request;
+import connection.Request1;
 import data.Product;
 
-public class Argument implements Request {
+public class Argument extends Request1 {
     private String arg;
     private Product product;
     public Argument(String s, Product p) {

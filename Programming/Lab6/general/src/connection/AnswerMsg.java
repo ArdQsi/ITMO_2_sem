@@ -1,6 +1,6 @@
 package connection;
 
-public class AnswerMsg implements Response{
+public class AnswerMsg implements Response {
     private String msg;
     private Status status;
 
