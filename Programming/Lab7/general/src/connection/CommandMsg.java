@@ -3,11 +3,13 @@ package connection;
 import auth.User;
 import data.Product;
 
+import java.io.Serializable;
 
-public class CommandMsg implements Request {
-    private final String commandName;
-    private final String commandStringArgument;
-    private final Product product;
+
+public class CommandMsg implements Request, Serializable {
+    private String commandName;
+    private String commandStringArgument;
+    private Product product;
     private User user;
     private Request.Status status;
 
@@ -26,6 +28,37 @@ public class CommandMsg implements Request {
         this.user = user;
         this.status = Status.DEFAULT;
     }
+
+    public CommandMsg() {}
+    private byte[] msgBytes;
+
+    public CommandMsg(Status status, byte[] msgBytes) {
+        this.status = status;
+        this.msgBytes = msgBytes;
+    }
+    String data;
+    public CommandMsg(String s) {
+        this.data = s;
+    }
+
+    private Request request;
+    public CommandMsg(Status status, Request request) {
+        this.request = request;
+        this.status = status;
+    }
+
+    public CommandMsg(Request request) {
+        this.request = request;
+    }
+
+    public Request getRequest() {
+        return request;
+    }
+
+    public byte[] getMsgBytes() {
+        return msgBytes;
+    }
+
 
     public void setStatus(Status status) {
         this.status = status;
@@ -55,4 +88,3 @@ public class CommandMsg implements Request {
         return user;
     }
 }
-

@@ -17,10 +17,10 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите порт");
         String s = scanner.nextLine();
-        String strPort = s;
+
 
         try {
-            port = Integer.parseInt(strPort);
+            port = Integer.parseInt(s);
         } catch (NumberFormatException e) {
             throw new InvalidPortException();
         }

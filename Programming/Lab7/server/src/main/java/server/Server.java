@@ -5,9 +5,7 @@ import auth.User;
 import auth.UserManager;
 import collection.CollectionManager;
 import commands.CommandType;
-import connection.AnswerMsg;
-import connection.Request;
-import connection.Response;
+import connection.*;
 import data.Product;
 import database.DatabaseHandler;
 import database.ProductDatabaseManager;
@@ -89,6 +87,8 @@ public class Server extends Thread {
         }
     }
 
+    int INCREMENT = 4096;
+
     public void receive() throws ConnectionException, InvalidDataException {
         ByteBuffer buffer = ByteBuffer.allocate(4096);
         Request request = null;
@@ -103,22 +103,53 @@ public class Server extends Thread {
             throw new ConnectionException("something went wrong during receiving request");
         }
         try {
+            StringBuilder stringBuilder = new StringBuilder();
             ObjectInputStream objectInputStream = new ObjectInputStream(new ByteArrayInputStream(buffer.array()));
-            request = (Request) objectInputStream.readObject();
-        } catch (IOException | ClassNotFoundException | ClassCastException e) {
+            Request1 req = (Request1) objectInputStream.readObject();
+
+            if (req.getIsBoolean()) {
+                requestQueue.offer(new AbstractMap.SimpleEntry<>(clientAddress, req.getRequest()));
+            } else {
+                do {
+                    stringBuilder.append(req.getRequest());
+                    channel.receive(buffer);
+                    req = (Request1) objectInputStream.readObject();
+                } while (!req.getIsBoolean());
+                request = new Request1(stringBuilder.toString());
+                requestQueue.offer(new AbstractMap.SimpleEntry<>(clientAddress, request));
+            }
+
+        } catch (ClassNotFoundException | IOException e) {
             throw new InvalidReceivedDataException();
         }
-        requestQueue.offer(new AbstractMap.SimpleEntry<>(clientAddress, request));
+
     }
 
     public void send(InetSocketAddress clientAddress, Response response) throws ConnectionException {
         if (clientAddress == null) throw new InvalidAddressException("not found client address");
         try {
-            ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream(4096);
-            ObjectOutputStream objectOutputStream = new ObjectOutputStream(byteArrayOutputStream);
-            objectOutputStream.writeObject(response);
-            channel.send(ByteBuffer.wrap(byteArrayOutputStream.toByteArray()), clientAddress);
-            Log.logger.info("sent response to " + clientAddress);
+            byte[] data = response.toString().getBytes();
+            int position = 0;
+            int limit = INCREMENT;
+
+            for (int capacity = 0; data.length > capacity; limit += 4096) {
+                byte[] window = Arrays.copyOfRange(data, position, limit);
+                capacity += limit - position;
+                Response1 response1;
+                if (capacity >= data.length) {
+                    response1 = new Response1(response, true);
+                } else {
+                    response1 = new Response1(window, false);
+                }
+
+                ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream(4096);
+                ObjectOutputStream objectOutputStream = new ObjectOutputStream(byteArrayOutputStream);
+                objectOutputStream.writeObject(response1);
+                this.channel.send(ByteBuffer.wrap(byteArrayOutputStream.toByteArray()), clientAddress);
+                byteArrayOutputStream.close();
+                position = limit;
+            }
+
         } catch (IOException e) {
             throw new ConnectionException("something went wrong during sending response");
         }

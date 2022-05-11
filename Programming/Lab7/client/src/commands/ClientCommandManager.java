@@ -2,6 +2,7 @@ package commands;
 
 import client.Client;
 import connection.AnswerMsg;
+import connection.CommandMsg;
 import connection.Request;
 import connection.Response;
 import exceptions.ConnectionException;
@@ -33,7 +34,7 @@ public class ClientCommandManager extends CommandManager {
         } else {
             try {
                 if (client.getUser() != null && msg.getUser() == null) msg.setUser(client.getUser());
-                client.send(msg);
+                client.send((CommandMsg) msg);
                 //Thread.sleep(300);
                 res = (AnswerMsg) client.receive();
                 if (res.getStatus() == Response.Status.AUTH_SUCCESS) {
