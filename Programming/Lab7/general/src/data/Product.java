@@ -18,42 +18,6 @@ public class Product implements Collectionable, Serializable {
     private UnitOfMeasure unitOfMeasure; //Поле не может быть null
     private Person owner; //Поле может быть null
     private String userLogin;
-//
-//    /**
-//     * constructor for filling fields
-//     *
-//     * @param name
-//     * @param coordinates
-//     * @param price
-//     * @param manufactureCost
-//     * @param unitOfMeasure
-//     * @param owner
-//     */
-//    public Product(long id, String name, Coordinates coordinates, Integer price, float manufactureCost, UnitOfMeasure unitOfMeasure, Person owner) {
-//        creationDate = LocalDate.now();
-//        this.id = id;
-//        this.name = name;
-//        this.coordinates = coordinates;
-//        this.creationDate = creationDate;
-//        this.price = price;
-//        this.manufactureCost = manufactureCost;
-//        this.unitOfMeasure = unitOfMeasure;
-//        this.owner = owner;
-//    }
-//
-//    public Product(String name, Coordinates coordinates, Integer price, float manufactureCost, UnitOfMeasure unitOfMeasure, Person owner) {
-//        creationDate = LocalDate.now();
-//        this.name = name;
-//        this.coordinates = coordinates;
-//        this.creationDate = creationDate;
-//        this.price = price;
-//        this.manufactureCost = manufactureCost;
-//        this.unitOfMeasure = unitOfMeasure;
-//        this.owner = owner;
-//    }
-//
-//    public Product() {
-//    }
 
     public Product(String name, Coordinates coordinates, Integer price, float manufactureCost, UnitOfMeasure unitOfMeasure, Person owner) {
         this.name = name;
@@ -62,10 +26,10 @@ public class Product implements Collectionable, Serializable {
         this.manufactureCost = manufactureCost;
         this.unitOfMeasure = unitOfMeasure;
         this.owner = owner;
-       // creationDate = LocalDate.now();
     }
 
-    public Product() {}
+    public Product() {
+    }
 
     public static class SortingComparator implements Comparator<Product> {
         public int compare(Product p1, Product p2) {

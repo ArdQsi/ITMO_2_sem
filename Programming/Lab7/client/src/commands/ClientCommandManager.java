@@ -35,16 +35,13 @@ public class ClientCommandManager extends CommandManager {
             try {
                 if (client.getUser() != null && msg.getUser() == null) msg.setUser(client.getUser());
                 client.send((CommandMsg) msg);
-                //Thread.sleep(300);
                 res = (AnswerMsg) client.receive();
                 if (res.getStatus() == Response.Status.AUTH_SUCCESS) {
                     client.setUser(msg.getUser());
                 }
             } catch (InvalidDataException | ConnectionException e) {
                 res.error(e.getMessage());
-            } /*catch (InterruptedException e) {
-                e.printStackTrace();
-            }*/
+            }
         }
         print(res);
         return res;

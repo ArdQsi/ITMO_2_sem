@@ -170,19 +170,21 @@ public abstract class InputManagerImplements implements InputManager {
         return product;
     }
     public String readPassword() throws InvalidDataException {
+        System.out.println("Введите пароль");
         String s = scanner.nextLine();
         if (s.equals("")) throw new EmptyStringException();
         return s;
     }
 
     public String readLogin() throws InvalidDataException{
+        System.out.println("Введите логин");
         String s = scanner.nextLine();
         if (s.equals("")) throw new EmptyStringException();
         return s;
     }
 
     public User readUser() throws InvalidDataException {
-        return new User(readPassword(), readLogin());
+        return new User(readLogin(), readPassword());
     }
 
     public CommandMsg readCommand() {

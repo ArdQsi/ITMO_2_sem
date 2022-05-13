@@ -82,12 +82,12 @@ public class ServerCommandManager extends CommandManager {
                 server.close();
                 break;
             case ERRROR:
-                Log.logger.error(message + res.getMessage());
+                Log.logger.error(message+ " " + res.getMessage());
                 break;
             case AUTH_SUCCESS:
                 if (isGeneratedByServer) server.setHostUser(user);
             default:
-                Log.logger.info(message + res.getMessage());
+                Log.logger.info(message + " " + res.getMessage());
                 break;
         }
         return res;

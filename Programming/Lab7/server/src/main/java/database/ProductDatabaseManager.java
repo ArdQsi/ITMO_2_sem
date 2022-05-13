@@ -133,7 +133,7 @@ public class ProductDatabaseManager extends ProductDequeManager {
         } catch (SQLException | DatabaseException e) {
             e.printStackTrace();
             databaseHandler.rollback();
-            throw new DatabaseException("cannot add to database1");
+            throw new DatabaseException("cannot add to database");
         } finally {
             databaseHandler.setNormalMode();
         }
@@ -179,8 +179,6 @@ public class ProductDatabaseManager extends ProductDequeManager {
         }
         super.removeById(id);
     }
-
-
 
 
     @Override

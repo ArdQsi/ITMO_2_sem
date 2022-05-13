@@ -60,7 +60,7 @@ public abstract class CommandManager implements Commandable, Closeable {
         inputManager = new ConsoleInputManager();
         isRunning = true;
         while(isRunning) {
-            Response answerMsg = new AnswerMsg();
+            Response answerMsg;
             print("введите команду(Команда \"help\" выведет список команд)");
             try {
                 CommandMsg commandMsg = inputManager.readCommand();
@@ -70,7 +70,6 @@ public abstract class CommandManager implements Commandable, Closeable {
                 print("ввод для пользователя закрыт");
                 break;
             }
-
             if(answerMsg.getStatus() == Response.Status.EXIT) {
                 close();
             }

@@ -46,3 +46,37 @@
 [21:32:30.069 ERROR] wrong command
 [21:32:31.301 ERROR]  showno such user, or user login or password is incorrect
 [21:32:46.093 ERROR]  addno such user, or user login or password is incorrect
+[21:50:47.854 ERROR]  haha  loginlogin or password is incorrect
+[01:09:39.192 ERROR]  showno such user, or user login or password is incorrect
+[01:48:37.813 ERROR] nothing to load
+[01:52:23.921 ERROR] nothing to load
+[01:53:24.055 ERROR] nothing to load
+[01:53:52.429 ERROR] nothing to load
+[01:54:56.274 ERROR] wrong command
+[23:27:29.470 ERROR] wrong command
+[23:27:33.336 ERROR]  show no such user, or user login or password is incorrect
+[23:27:57.314 ERROR]  showno such user, or user login or password is incorrect
+[23:28:04.798 ERROR]  helpno such user, or user login or password is incorrect
+[23:28:17.844 ERROR] wrong command
+[23:28:39.473 ERROR]  hah  remove_by_idno such id 60
+[23:30:28.630 ERROR]  helpno such user, or user login or password is incorrect
+[23:30:32.384 ERROR]  showno such user, or user login or password is incorrect
+[23:31:17.601 ERROR]  showno such user, or user login or password is incorrect
+[23:31:46.313 ERROR] wrong command
+[23:32:10.271 ERROR]  hah  remove_by_idno such id 9090
+[23:33:00.054 ERROR]  show no such user, or user login or password is incorrect
+[23:33:10.514 ERROR]  help no such user, or user login or password is incorrect
+[23:39:00.076 ERROR]  show no such user, or user login or password is incorrect
+[23:39:02.443 ERROR]  show no such user, or user login or password is incorrect
+[00:10:33.275 ERROR]  sha  login login or password is incorrect
+[00:10:42.196 ERROR]  sha  login login or password is incorrect
+[00:10:51.025 ERROR]  login login or password is incorrect
+[00:13:33.687 ERROR]  kek  register user kek already exist
+[00:13:37.568 ERROR]  show no such user, or user login or password is incorrect
+[00:13:57.510 ERROR]  show no such user, or user login or password is incorrect
+[00:22:14.099 ERROR]  show no such user, or user login or password is incorrect
+[00:23:37.387 ERROR]  help no such user, or user login or password is incorrect
+[00:23:38.932 ERROR]  show no such user, or user login or password is incorrect
+[00:23:44.879 ERROR]  exit wrong command
+[00:28:14.757 ERROR]  show no such user, or user login or password is incorrect
+[00:28:40.959 ERROR]  hah  remove_by_id no such id 90

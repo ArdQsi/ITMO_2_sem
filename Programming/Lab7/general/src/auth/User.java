@@ -15,7 +15,6 @@ public class User implements Serializable {
 
     public User(String userName, String password) {
         this.userName = userName;
-        this.password = password;
         try {
             this.password = SHA1Generator.hash(password);
         } catch (EncryptionException e) {
